@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 配置实体类与数据库中表的映射 -->
+	<class name="com.scau.bookStore.user.entity.User" table="t_user">
+		<!-- 配置实体类中唯一标识的id属性与表的主键对应，同时设置 自增长 -->
+		<!-- hibernate要求实体类要有唯一标识的属性，同时表也要有唯一标识的字段 -->
+		<id name="uid" column="uid">
+			<generator class="uuid"></generator>
+		</id>
+		<!-- 配置实体类的其他属性 -->
+		<property name="username" column="username"></property>
+		<property name="upassword" column="upassword"></property>
+	</class>
+</hibernate-mapping>
